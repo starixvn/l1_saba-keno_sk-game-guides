@@ -1,7 +1,6 @@
 import { WithTranslation } from "next-i18next";
 import { WithRouterProps } from "next/dist/client/with-router";
 import { GameConfigs, UserStakeLevelProps } from "../pages";
-import { ProvablyFair } from "../pages/pf";
 
 export type BaseProps = {
     name: string;
@@ -19,16 +18,5 @@ export type BaseProps = {
     displayName: string;
     jackpot: boolean;
     scrollToId: string;
-} & WithTranslation &
-    WithRouterProps;
-
-export type PFProps = {
-    name: string;
-    gameId: number;
-    locale: string;
-    provablyFair: ProvablyFair | any;
-    dynamic: boolean;
-    environment: string;
-    displayName: string;
 } & WithTranslation &
     WithRouterProps;

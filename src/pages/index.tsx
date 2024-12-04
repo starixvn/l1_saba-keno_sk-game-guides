@@ -7,7 +7,6 @@ import React, { useEffect, useRef, useState } from "react";
 import appSettings from "../common/app-settings";
 import { ENVIRONMENT, buildVersion } from "../common/constants";
 import { ImgVersionProvider } from "../contexts/img-version";
-import { isNewCascadingSlot, isNewSlotGame } from "../helpers/game-helper";
 import { checkIsInteger } from "../helpers/number-helper";
 
 const GameGuide = dynamic(() => import("../components/game-guide/game-guide"));
@@ -41,12 +40,8 @@ const FontLocaleMapper: { [key: string]: string } = {
 const changeFontFamilyFollowLanguage = (locale: string, env: string, gameId: number, gameType = 0) => {
     let fontFamily = FontLocaleMapper[locale] ?? "Noto";
 
-    if (env === ENVIRONMENT.sm) {
+    if (env === ENVIRONMENT.sk) {
         fontFamily = "SanFranciscoDisplay";
-    }
-
-    if (isNewSlotGame(gameType, gameId) || isNewCascadingSlot(gameType, gameId)) {
-        fontFamily = FontLocaleMapper[locale] ?? "Kodchasan";
     }
 
     document.documentElement.style.fontFamily = fontFamily;
@@ -58,7 +53,7 @@ const handleEnv = (queryParams: object | any) => {
         return queryParams.f;
     }
 
-    return ENVIRONMENT.sm;
+    return ENVIRONMENT.sk;
 };
 
 const Home: React.FC<{ gameSetting: any }> = ({ gameSetting }) => {
@@ -73,7 +68,7 @@ const Home: React.FC<{ gameSetting: any }> = ({ gameSetting }) => {
     const [dynamic, setDynamic] = useState<boolean>(true);
     const [isGetGameConfigs, setIsGetGameConfigs] = useState<boolean>(true);
     const [isScrollMD5, setIsScrollMD5] = useState<boolean>(false);
-    const [environment, setEnvironment] = useState<string>(ENVIRONMENT.sm);
+    const [environment, setEnvironment] = useState<string>(ENVIRONMENT.sk);
     const [isInPromotionTime, setIsInPromotionTime] = useState<boolean>(false);
     const [fractionalOddsFormat, setFractionalOddsFormat] = useState<boolean>(false);
     const [displayName, setDisplayName] = useState<string>("");
