@@ -11,7 +11,6 @@ const KenoMiniGuide = dynamic(() => import("./keno-pro-viet/keno-mini"));
 const KenoMatchGuide = dynamic(() => import("./keno-match"));
 const KenoPowerGuide = dynamic(() => import("./keno-power"));
 
-
 class GameGuide<P extends BaseProps> extends GuideBase<P> {
 
     renderGuide = () => {
