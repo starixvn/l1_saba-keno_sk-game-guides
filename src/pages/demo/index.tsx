@@ -80,7 +80,7 @@ const Demo = () => {
         if (configs) {
             setLinkGuide(configs.linkGuide ?? "");
             setLocale(configs.locale ?? locales.en);
-            setGameId(configs.gameId ?? 1);
+            setGameId(configs.gameId ?? GAMES.KENO_MINI);
             setTheme(configs.theme ?? Themes.dark);
             setEnvironment(configs.environment ?? ENVIRONMENT.sk);
             setMinBet(configs.minBet ?? 0);
