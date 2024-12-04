@@ -20,18 +20,18 @@ export const ENVIRONMENT = { sk: "sk" };
 export const buildVersion = process.env.buildVersion;
 
 export const GAMES = {
-    KENO_MINI: 14,
-    KENO_MINI_2: 15,
-    KENO_EAST: 16,
-    KENO_WEST: 17,
-    KENO_SOUTH: 18,
-    KENO_NORTH: 19,
-    KENO_MATCH_1: 36,
-    KENO_MATCH_2: 37,
-    KENO_POWER_1: 40,
-    KENO_POWER_2: 41,
-    MEGA_KENO: 52,
-    MEGA_KENO_2: 53
+    MEGA_KENO: 1501,
+    MEGA_KENO_2: 1502,
+    KENO_MINI: 1503,
+    KENO_MINI_2: 1504,
+    KENO_EAST: 1505,
+    KENO_WEST: 1506,
+    KENO_SOUTH: 1507,
+    KENO_NORTH: 1508,
+    KENO_POWER_1: 1509,
+    KENO_POWER_2: 1510,
+    KENO_MATCH_1: 1511,
+    KENO_MATCH_2: 1512
 };
 
 export const TolgeeConfig = {

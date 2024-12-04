@@ -65,7 +65,7 @@ const Demo = () => {
     const configsRef = useRef<HTMLDivElement | null>(null);
     const [linkGuide, setLinkGuide] = useState<string>("");
     const [locale, setLocale] = useState<string>(locales.en);
-    const [gameId, setGameId] = useState<number>(1);
+    const [gameId, setGameId] = useState<number>(GAMES.MEGA_KENO);
     const [theme, setTheme] = useState<string>(Themes.dark);
     const [environment, setEnvironment] = useState<string>(ENVIRONMENT.sk);
     const [minBet, setMinBet] = useState<number>(0);
@@ -80,7 +80,7 @@ const Demo = () => {
         if (configs) {
             setLinkGuide(configs.linkGuide ?? "");
             setLocale(configs.locale ?? locales.en);
-            setGameId(configs.gameId ?? GAMES.KENO_MINI);
+            setGameId(configs.gameId ?? GAMES.MEGA_KENO);
             setTheme(configs.theme ?? Themes.dark);
             setEnvironment(configs.environment ?? ENVIRONMENT.sk);
             setMinBet(configs.minBet ?? 0);
