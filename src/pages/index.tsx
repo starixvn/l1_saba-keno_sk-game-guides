@@ -10,9 +10,7 @@ import { ImgVersionProvider } from "../contexts/img-version";
 import { isNewCascadingSlot, isNewSlotGame } from "../helpers/game-helper";
 import { checkIsInteger } from "../helpers/number-helper";
 
-const GameGuideMini = dynamic(() => import("../components/game-guide-mini/game-guide-mini"));
 const GameGuide = dynamic(() => import("../components/game-guide/game-guide"));
-const GameGuidePF = dynamic(() => import("../components/game-guide-pf/game-guide-pf"));
 
 export interface UserStakeLevelProps {
     minBet?: number;
@@ -101,14 +99,6 @@ const Home: React.FC<{ gameSetting: any }> = ({ gameSetting }) => {
             scrollToId,
         };
 
-        if (environment === ENVIRONMENT.si) {
-            return <GameGuideMini {...props} />;
-        }
-
-        if (environment === ENVIRONMENT.pf) {
-            return <GameGuidePF {...props} />;
-        }
-
         return <GameGuide {...props} />;
     };
 
@@ -192,11 +182,6 @@ export const getServerSideProps = async (context: NextPageContext) => {
             gameSetting: await getGameSetting(+gameId),
             ...(await serverSideTranslations(context.locale ?? "en", [
                 "common",
-                "blackjack",
-                "sicbo",
-                "threecards",
-                "classicslot",
-                "cascadingslot",
             ])),
         },
     };
