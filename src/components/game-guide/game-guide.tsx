@@ -28,10 +28,10 @@ class GameGuide<P extends BaseProps> extends GuideBase<P> {
             case GAMES.KENO_MINI:
             case GAMES.KENO_MINI_2:
                 return <KenoMiniGuide key={`game-${gameId}`} {...gameGuideProps} />;
-            case GAMES.KENO_MATCH_1:
-            case GAMES.KENO_MATCH_2:
+            case GAMES.KENO_SOCCER:
+            case GAMES.KENO_SOCCER_2:
                 return <KenoMatchGuide key={`game-${gameId}`} {...gameGuideProps} />;
-            case GAMES.KENO_POWER_1:
+            case GAMES.KENO_POWER:
             case GAMES.KENO_POWER_2:
                 return <KenoPowerGuide key={`game-${gameId}`} {...gameGuideProps} />;
 

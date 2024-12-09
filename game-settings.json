@@ -33,7 +33,7 @@
     },
     "1509": {
         "id": 1509,
-        "gameName": "KenoPower1"
+        "gameName": "KenoPower"
     },
     "1510": {
         "id": 1510,
@@ -45,6 +45,6 @@
     },
     "1512": {
         "id": 1512,
-        "gameName": "KenoMatch2"
+        "gameName": "KenoSoccer2"
     }
 }

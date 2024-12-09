@@ -28,10 +28,10 @@ export const GAMES = {
     KENO_WEST: 1506,
     KENO_SOUTH: 1507,
     KENO_NORTH: 1508,
-    KENO_POWER_1: 1509,
+    KENO_POWER: 1509,
     KENO_POWER_2: 1510,
-    KENO_MATCH_1: 1511,
-    KENO_MATCH_2: 1512
+    KENO_SOCCER: 1511,
+    KENO_SOCCER_2: 1512
 };
 
 export const TolgeeConfig = {
