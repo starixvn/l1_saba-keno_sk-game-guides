@@ -175,9 +175,7 @@ export const getServerSideProps = async (context: NextPageContext) => {
     return {
         props: {
             gameSetting: await getGameSetting(+gameId),
-            ...(await serverSideTranslations(context.locale ?? "en", [
-                "common",
-            ])),
+            ...(await serverSideTranslations(context.locale ?? "en", ["common"])),
         },
     };
 };
