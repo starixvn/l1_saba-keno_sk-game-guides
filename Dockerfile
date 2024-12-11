@@ -1,22 +1,10 @@
-FROM hub.lumigame.com/base/node:20.9.0-alpine AS base
-FROM base AS deps
-WORKDIR /app
-
-RUN apk add --no-cache libc6-compat
-ENV YARN_CACHE_FOLDER=/root/.yarn
-
-RUN --mount=type=cache,target=$YARN_CACHE_FOLDER \
-     yarn cache dir && yarn cache list
-
-COPY package.json yarn.lock ./
-RUN --mount=type=cache,target=$YARN_CACHE_FOLDER \
-     yarn install --frozen-lockfile --verbose
-
-FROM base AS builder
+FROM hub.lumigame.com/pentagon-base/sk-game-guide-base:20.9.0-alpine-npm-cache-latest AS deps
+FROM hub.lumigame.com/base/node:20.9.0-alpine AS builder
 WORKDIR /app
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY package.json yarn.lock tsconfig.json configs.json game-settings.json next.config.js next-i18next.config.js ./
+RUN yarn install --frozen-lockfile --verbose
 COPY configs ./configs
 COPY public ./public
 COPY src ./src
