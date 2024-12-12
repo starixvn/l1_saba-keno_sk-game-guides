@@ -1,6 +1,6 @@
 {
     "sentry": {
-        "dsn": "https://c8f93631be824a14b9f114f53e3a2bfc@sentry.lumigame.com/3",
+        "dsn": "https://23f0ad97852a405182ac8b260b5a1f63@sentry.lumigame.com/101",
         "environment": "LOCAL"
     },
     "system": "L1",
