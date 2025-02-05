@@ -1,0 +1,9 @@
+FROM hub.lumigame.com/base/node:20.9.0-alpine as deps
+WORKDIR /app
+
+COPY ./package.json ./yarn.lock ./
+RUN yarn install --frozen-lockfile
+
+FROM hub.lumigame.com/base/node:20.9.0-alpine
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules

@@ -4,7 +4,7 @@ export const en: IKenoTranslationResource = {
     introduction: {
         title: "Introduction",
         description:
-            "Mega Keno / Mega Keno 2 / Keno North / Keno South /Keno West / Keno East are the RNG Keno with 80 balls. There are 20 balls drawn randomly from 80 numbered balls ranging from 1 to 80. Players place bets on one or more betting options shown on the game table. The total sum of the 20 numbered balls drawn will determine the player’s win or loss.",
+            "Mega Keno / Mega Keno 2 / Keno North / Keno South / Keno West / Keno East are the RNG Keno with 80 balls. There are 20 balls drawn randomly from 80 numbered balls ranging from 1 to 80. Players place bets on one or more betting options shown on the game table. The total sum of the 20 numbered balls drawn will determine the player’s win or loss.",
     },
     gameRules: {
         title: "Game Rules",

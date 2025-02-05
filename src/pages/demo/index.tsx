@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import appSettings from "../../common/app-settings";
-import { BACKGROUND_THEMES, ENVIRONMENT, GAMES, GAMES_MINI, GAMES_PF, locales, Themes } from "../../common/constants";
+import { BACKGROUND_THEMES, ENVIRONMENT, GAMES, locales, Themes } from "../../common/constants";
 import { getLocalStorageItem, localStorageKeys, storeLocalStorageItem } from "../../common/local-storage";
 
 type TLocalStorageData = {
@@ -36,14 +36,6 @@ const SelectOptions = (listData: Object, setData: Function, value: string) => {
 
 const renderGameName = (setGameId: Function, t: TFunction, gameId: number, environment: string) => {
     const getGameFollowEnv = () => {
-        if (environment === ENVIRONMENT.si) {
-            return Object.values(GAMES_MINI);
-        }
-
-        if (environment === ENVIRONMENT.pf) {
-            return Object.values(GAMES_PF);
-        }
-
         return Object.values(GAMES);
     };
     return (
@@ -73,9 +65,9 @@ const Demo = () => {
     const configsRef = useRef<HTMLDivElement | null>(null);
     const [linkGuide, setLinkGuide] = useState<string>("");
     const [locale, setLocale] = useState<string>(locales.en);
-    const [gameId, setGameId] = useState<number>(1);
+    const [gameId, setGameId] = useState<number>(GAMES.MEGA_KENO);
     const [theme, setTheme] = useState<string>(Themes.dark);
-    const [environment, setEnvironment] = useState<string>(ENVIRONMENT.sc);
+    const [environment, setEnvironment] = useState<string>(ENVIRONMENT.sk);
     const [minBet, setMinBet] = useState<number>(0);
     const [maxBet, setMaxBet] = useState<number>(2000);
     const [isShowConfig, setIsShowConfig] = useState<boolean>(true);
@@ -88,9 +80,9 @@ const Demo = () => {
         if (configs) {
             setLinkGuide(configs.linkGuide ?? "");
             setLocale(configs.locale ?? locales.en);
-            setGameId(configs.gameId ?? 1);
+            setGameId(configs.gameId ?? GAMES.MEGA_KENO);
             setTheme(configs.theme ?? Themes.dark);
-            setEnvironment(configs.environment ?? ENVIRONMENT.sc);
+            setEnvironment(configs.environment ?? ENVIRONMENT.sk);
             setMinBet(configs.minBet ?? 0);
             setMaxBet(configs.maxBet ?? 2000);
             setIsShowConfig(configs.isShowConfig ? true : false);
@@ -100,7 +92,7 @@ const Demo = () => {
     useEffect(() => {
         if (locale && gameId && theme && environment) {
             let data = `${locale}?gId=${gameId}&t=${theme}&minBet=${minBet}&maxBet=${maxBet}&c=0`;
-            environment !== ENVIRONMENT.sm && (data += `&f=${environment}`);
+            environment !== ENVIRONMENT.sk && (data += `&f=${environment}`);
             setLinkGuide(`${window.location.origin}/${data}`);
             setBackgroundIframe(BACKGROUND_THEMES?.[theme]);
 

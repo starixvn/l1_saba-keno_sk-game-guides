@@ -1,0 +1,11 @@
+{
+    "sentry": {
+        "dsn": "https://2df78dcd56214e89b186b907b77369fa@scsentry.sgamesuat.com/301",
+        "environment": "SIT"
+    },
+    "system": "L1",
+    "enableSourceMap": false,
+    "resourceUrl": "",
+    "gameSettingUrl": "",
+    "useTolgeeStatic": true
+}

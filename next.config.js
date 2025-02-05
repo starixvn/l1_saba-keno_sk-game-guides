@@ -1,4 +1,3 @@
-const basePath = "";
 const gameSettings = require("./game-settings.json");
 const configs = require("./configs.json");
 const { i18n } = require("./next-i18next.config");
@@ -8,7 +7,7 @@ const appSettings = {
     ...configs,
     gameSettings,
 };
-
+const basePath = "";
 /**
  * @type {import('next').NextConfig}
  */
