@@ -40,10 +40,6 @@ const FontLocaleMapper: { [key: string]: string } = {
 const changeFontFamilyFollowLanguage = (locale: string, env: string, gameId: number, gameType = 0) => {
     let fontFamily = FontLocaleMapper[locale] ?? "Noto";
 
-    if (env === ENVIRONMENT.sk) {
-        fontFamily = "SanFranciscoDisplay";
-    }
-
     document.documentElement.style.fontFamily = fontFamily;
     document.body.style.fontFamily = fontFamily;
 };

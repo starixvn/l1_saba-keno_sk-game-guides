@@ -320,9 +320,11 @@ ul {
             border: var(--border-line) !important;
             font-weight: var(--font-weight, 500);
             color: var(--table-header-color);
+            background-color: var(--table-header-background) !important;
         }
+        
         thead {
-            background-color: var(--table-header-background);
+            background-color: var(--table-header-background) !important;
         }
 
         tbody {

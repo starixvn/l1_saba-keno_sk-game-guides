@@ -5,7 +5,7 @@ import Styles from "../keno-max.module.scss";
 
 export default class KenoMD5 extends MD5 {
     renderStep1() {
-        return this.props.environment === ENVIRONMENT.sk ? super.renderStep1() : this.renderStep1OnMobile();
+        return this.renderStep1OnMobile();
     }
 
     renderStep1OnMobile() {
@@ -21,7 +21,7 @@ export default class KenoMD5 extends MD5 {
     }
 
     renderStep2() {
-        return this.props.environment === ENVIRONMENT.sk ? super.renderStep2() : this.renderStep2OnMobile();
+        return this.renderStep2OnMobile();
     }
 
     renderStep2OnMobile() {
