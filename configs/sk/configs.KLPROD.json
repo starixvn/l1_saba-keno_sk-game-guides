@@ -1,0 +1,11 @@
+{
+    "sentry": {
+        "dsn": "https://707edaf283cc4eed88a563bc734b975f@sentry-scklprod-ovs.byb6181.com/174",
+        "environment": "PROD"
+    },
+    "system": "L1",
+    "enableSourceMap": false,
+    "resourceUrl": "",
+    "gameSettingUrl": "",
+    "useTolgeeStatic": true
+}
